@@ -1,0 +1,262 @@
+:root {
+background-color: #333;
+background-image: url(assets/imgs/mokey\ mokey.png);
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: right;
+overflow: hidden;
+color: rgb(255, 255, 255);
+font-family: 'Open Sans', sans-serif;
+}
+body {
+	height: 100vh;
+	width: 100vw;
+	margin: 0;
+}
+.box {
+	display: flex;
+    flex-direction: column;
+	justify-content:center;
+	align-content: center;
+	align-items: center;
+	height: 100vh;
+	text-align: center;
+}
+.card, h3{
+	text-shadow: 4px 2px 7px rgba(0,0,0,0.47);
+}
+section {
+	margin-left: 10vw;
+	margin-top: 7vh;
+	overflow: scroll;
+	min-height: 70vh;
+}
+.card{
+background: rgba(51, 51, 51, 0.2);
+}
+section h3 {
+	font-size: 35px;
+	padding: 5px;
+	color: #e0dfdc;
+	font-size: 5vh;
+	text-overflow: clip;
+	width: 100%;
+}
+.box input {
+	outline:none;
+	transition: all 0.3s;
+}
+.box button {
+	outline:none;
+	transition: all 0.7s;
+}
+.box button:focus {
+	outline: 1px solid #7b00ff;
+}
+.box input {
+	padding: 15px;
+	width: 50vw;
+	margin-bottom: 10px;
+	border: 1px solid white;
+	background: #151515;
+}
+.box input:focus {
+	border: 1px solid #7b00ff;
+}
+.box button {
+	padding: 15px;
+	width: 50vw;
+	border: none;
+	text-transform: uppercase;
+	background: #151515;
+    color: white;
+}
+
+/* Navbar */
+header {
+	background: var(--background);
+	text-align: center;
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+  }
+  
+  .nav-toggle {
+	display: none;
+  }
+  
+  .nav-toggle-label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: 1em;
+	height: 100%;
+	display: flex;
+	align-items: center;
+  }
+  
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+	display: block;
+	background: white;
+	height: 2px;
+	width: 2em;
+	border-radius: 2px;
+	position: relative;
+  }
+  
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+	content: '';
+	position: absolute;
+  }
+  
+  .nav-toggle-label span::before {
+	bottom: 7px;
+  }
+  
+  .nav-toggle-label span::after {
+	top: 7px;
+  }
+  
+  nav {
+	position: absolute;
+	text-align: left;
+	top: 100%;
+	left: 0;
+	background: var(--background);
+	width: 100%;
+	transform: scale(1, 0);
+	transform-origin: top;
+	transition: transform 400ms ease-in-out;
+  }
+  
+  nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+  }
+  
+  nav li {
+	margin-bottom: 1em;
+	margin-left: 1em;
+  }
+  
+  nav a {
+	color: white;
+	text-decoration: none;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	opacity: 0;
+	transition: opacity 150ms ease-in-out;
+  }
+  
+  nav a:hover {
+	color: #000;
+  }
+  
+  .nav-toggle:checked ~ nav {
+	  transform: scale(1, 1);
+  }
+  
+  .nav-toggle:checked ~ nav a {
+	opacity: 1;
+	transition: opacity 250ms ease-in-out 250ms;
+  }
+  
+  
+  header {
+	  display: grid;
+	  grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+	}
+	
+	.logo {
+		grid-column: 2 / 3;
+	}
+	
+	nav {
+		all: unset;
+		grid-column: 3 / 4;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+	
+	nav ul {
+		display: flex;
+		justify-content: flex-end;
+	}
+	
+	nav li {
+		margin-left: 3em;
+		margin-bottom: 0;
+	}
+	
+	nav a {
+		opacity: 1;
+		position: relative;
+	}
+	
+	nav a::before {
+		content: '';
+		display: block;
+		height: 5px;
+		background: black;
+		position: absolute;
+		top: -0.75em;
+		left: 0;
+		right: 0;    
+		transform: scale(0, 1);
+		transform-origin: center;
+		transition: transform ease-in-out 250ms;
+	}
+	
+	nav a:hover::before {
+		transform: scale(1, 1);
+	}
+	
+	/* media screen */
+	@media screen and ( min-width: 320px ) and ( max-width: 480px ) {
+		.box input{
+			width: 90vw;
+		}
+		.box button{
+			width: 90vw;
+		}
+	}
+	@media screen and ( min-width: 481px ) and ( max-width: 768px ) {
+		.box input, button{
+			width: 60vw;
+		}
+		.box button{
+			width: 60vw;
+		}
+	}
+	@media screen and ( min-width: 769px ) and ( max-width: 1024px ) {
+		.box input, button{
+			width: 40vw;
+		}
+		.box button{
+			width: 40vw;
+		}
+	}
+	@media screen and (min-width: 800px) {
+		.nav-toggle-label {
+			display: none;
+		}
+	}
+	@media screen and ( min-width: 1025px ) {
+		.box input, button{
+			width: 30vw;
+		}
+	.box button{
+		width: 30vw;
+	}
+	section{
+	-webkit-column-count: 2; 
+    -moz-column-count: 2;
+    column-count: 2;
+	display: inline-block;
+	}
+}
